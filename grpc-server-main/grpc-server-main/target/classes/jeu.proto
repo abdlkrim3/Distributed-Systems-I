@@ -1,0 +1,15 @@
+syntax="proto3";
+option java_package="com.enset.stubs";
+
+service jeu{
+  rpc requestReplay(stream guessMsg) returns (stream repMsg);
+}
+
+message guessMsg{
+  string nom=1;
+  double nomber=2;
+}
+
+message repMsg{
+  string cont=1;
+}

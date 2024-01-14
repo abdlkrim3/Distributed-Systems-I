@@ -1,0 +1,17 @@
+syntax="proto3";
+option java_package="com.enset.stubs";
+
+service chat{
+  rpc send(stream request) returns (stream request); //bi-directional stream
+  rpc connect(connect) returns (request); //request of connection
+  rpc disconnect(connect) returns(request); //request of disconnect
+}
+message request{
+  string from=1;
+  string to=2;
+  string message=3;
+}
+
+message connect{
+  string nom=1;
+}
